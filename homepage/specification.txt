@@ -1,0 +1,22 @@
+Html Tags Used
+    1.<html>
+    2.<head>
+    3.<title>
+    4.<link>
+    5.<script>
+    6.<h1>
+    7.<nav>
+    8.<a>
+    9.<table>
+    10.<img>
+
+CSS properties
+    1. font-size
+    2. margin
+    3. display
+    4. padding
+    5. width
+
+Javascript was used to 'listen' to scrolls, then display the content in a fade animation and also to implement a scroll to top functionality.
+
+Bootstrap was used for the <p> tags font-family and for styling the table

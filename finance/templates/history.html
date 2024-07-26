@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Transaction history
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <thead>
+            <caption class="caption-top" style="text-align:center; color:black;"><h3><b>Transaction History</b></h3></caption>
+            <tr>
+                <th>Symbol</th>
+                <th>Price</th>
+                <th>Shares</th>
+                <th>Transaction type</th>
+                <th>Transaction date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in stocks %}
+            <tr>
+                <td>{{stock.symbol}}</td>
+                <td>{{stock.price | usd}}</td>
+                <td>{{stock.shares}}</td>
+                <td>
+                    {% if stock.shares>0 %}
+                        Buy
+                    {% else %}
+                        Sell
+                    {% endif %}
+                </td>
+                <td>{{stock.transaction_date}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

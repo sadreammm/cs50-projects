@@ -1,0 +1,10 @@
+Q1. We can use the sql query
+SELECT AVG(energy), AVG(valence), AVG(danceability) FROM songs;
+
+By looking at the result(data) we can determine the prominent mood of the user, for example if the averages are high, then we can conclude that
+the user likes higher energy, valence and danceability songs.
+
+
+Q2. These are just averages of the songs, a few high energy songs can boost up the average, which would then not be a correct representation, instead
+if we calculate averages for the genres and then compare those averages, we can determine which genre the user likes the most and hence determine
+the prominent mood of the user.

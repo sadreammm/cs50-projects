@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            document.addEventListener("DOMContentLoaded",function(){
+                let correct = document.querySelector(".correct");
+                 correct.addEventListener("click",function(){
+                    correct.style.backgroundColor = "Green";
+                    document.querySelector("#mcq").querySelector(".response").innerHTML = "Correct!";
+                });
+
+                let incorrect = document.querySelectorAll(".incorrect");
+                for(let i=0;i<incorrect.length;i++){
+                    incorrect[i].addEventListener("click",function(){
+                        incorrect[i].style.backgroundColor = "red";
+                        document.querySelector("#mcq").querySelector(".response").innerHTML = "Incorrect!";
+                    });
+                }
+                let check = document.querySelector('#check');
+                check.addEventListener('click',function(){
+                    let input = document.querySelector('input');
+                    if(input.value=='0'){
+                        input.style.backgroundColor="Green";
+                        document.querySelector("#free").querySelector(".response").innerHTML = "Correct!";
+                    }
+                    else{
+                        input.style.backgroundColor="red";
+                        document.querySelector("#free").querySelector(".response").innerHTML = "Incorrect!";
+                    }
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section" id="mcq">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                 <h3>What is the capital of New Zealand?</h3>
+                 <span class="response"></span>
+                 <br>
+                 <button class="correct">Wellington</button>
+                 <button class="incorrect">Auckland</button>
+                 <button class="incorrect">Christchurch</button>
+                 <button class="incorrect">Hamilton</button>
+            </div>
+
+            <div class="section" id="free">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                 <h3>What is (3x87+232)x0 = ?</h3>
+                 <span class="response"></span>
+                 <br>
+                 <input name="answer" type="text"> <button id="check">Check Answer</button>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <thead>
+            <caption class="caption-top" style="text-align:center; color:black;"><h2><b>My Portfolio</b></h2></caption>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Current Price</th>
+                <th>Total Stock Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for holding in holdings%}
+            <tr>
+                <td>{{holding.symbol}}</td>
+                <td>{{holding.shares}}</td>
+                <td>{{holding.current_price | usd}}</td>
+                <td>{{holding.total_stock_price | usd}}</td>
+                <td>
+                    <form action="/buy" method="get" style="display: inline; padding:0 15px;">
+                        <input name="symbol" type="hidden" value="{{ holding.symbol }}">
+                        <button class="btn btn-success" type="submit">Buy</button>
+                    </form>
+                    <form action="/sell" method="get" style="display: inline;">
+                        <input name="symbol" type="hidden" value="{{ holding.symbol }}">
+                        <button class="btn btn-danger" type="submit">Sell</button>
+                    </form>
+                </td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h3>Cash Balance: {{current_cash | usd}}</h3>
+    <h3>Grand Total: {{grand_total | usd}}</h3>
+{% endblock %}
