@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Stocks
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <thead>
+            <caption class="caption-top" style="text-align:center; color:black;"><h3><b>Stocks</b></h3></caption>
+            <tr>
+                <th>Symbol</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{symbol}}</td>
+                <td>{{price | usd}}</td>
+            </tr>
+        </tbody>
+    </table>
+{% endblock %}

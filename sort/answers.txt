@@ -1,0 +1,11 @@
+sort1 uses: bubble sorting algorithm
+
+How do you know?: was the fastest in sorting the sorted50000.txt file suggesting a Big Omega(n) complexity which is employed by bubble sort
+
+sort2 uses: merge sort alogrithm
+
+How do you know?: fastest in sorting both random50000 and reversed50000 suggesting Big O(n logn), which corresponds to merge sort
+
+sort3 uses: selection sort algorithm
+
+How do you know?: Determined from the results of the above two alogrithms.

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+    <form action="/sell" method="post">
+        {% if symbol!="" %}
+        <div class="mb-3" style="display:inline-flex; padding:0 10px;">
+            <select name="symbol" class="form-select" style="margin:0 10px;">
+                <option selected>{{symbol}}</option>
+                {% for stock in stocks %}
+                    <option>{{stock.symbol}}</option>
+                {% endfor %}
+            </select>
+            <input autofocus class="form-control mx-auto w-auto" name="shares" placeholder="Shares" type="text">
+        </div>
+        {% else %}
+        <div class="mb-3" style="display:inline-flex; padding:0 10px;">
+            <select autofocus name="symbol" class="form-select" style="margin:0 10px;">
+                <option disabled selected>select</option>
+                {% for stock in stocks %}
+                    <option>{{stock.symbol}}</option>
+                {% endfor %}
+            </select>
+            <input class="form-control mx-auto w-auto" name="shares" placeholder="Shares" type="text">
+        </div>
+        {% endif %}
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </form>
+{% endblock %}

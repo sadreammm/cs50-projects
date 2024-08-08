@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Account
+{% endblock %}
+
+{% block main %}
+    <h1>Hello, {{name}}</h1>
+    <h1>Cash Balance: {{cash | usd}}</h1>
+    <div class="mb-3" style="display:inline-flex;justify-content:space-between; align-items:center;">
+        <form action="/reset" method="get">
+            <button class="btn btn-primary" type="submit" style="margin:10px">Reset Password</button>
+        </form>
+        <form action="/cash" method="get">
+            <button class="btn btn-primary" type="submit">Add cash</button>
+        </form>
+    </div>
+{% endblock %}
